@@ -20,24 +20,27 @@ namespace EmployeeWageComputation
             for(int i = 0; i < num; i++)
             {
                 int attdStatus = random.Next(0,3);
-                if (attdStatus == PRESENT)
+
+                switch (attdStatus)
                 {
-                    dailyWage = WAGE_PER_HOUR * FULL_DAY_HOUR;
-                    Console.WriteLine($"The daily Wage for day {i+1} is: "+ dailyWage);
+                    case PRESENT:
+                        dailyWage = WAGE_PER_HOUR * FULL_DAY_HOUR;
+                        break;
+
+                    case PART_TIME:
+                        dailyWage = WAGE_PER_HOUR * PART_TIME_HOUR;
+                        break;
+
+                    case ABSENT:
+                        dailyWage = 0;
+                        break;
                 }
-                if(attdStatus == PART_TIME)
-                {
-                    dailyWage = WAGE_PER_HOUR * PART_TIME_HOUR;
-                    Console.WriteLine($"The daily Wage for day {i + 1} is: " + dailyWage);
-                }
-                if (attdStatus == ABSENT)
-                {
-                    dailyWage = 0;
-                    Console.WriteLine($"The daily Wage for day {i + 1} is: " + dailyWage);
-                }
+
+                Console.WriteLine($"The daily Wage for day {i + 1} is: " + dailyWage);
+
             }
 
-            
+
         }
     }
 }
