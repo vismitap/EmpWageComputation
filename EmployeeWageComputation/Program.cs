@@ -12,7 +12,9 @@ namespace EmployeeWageComputation
         {
             Console.WriteLine("********Welcome to Employee Wage Computation**********");
             EmployeeWageComputation employee = new EmployeeWageComputation();
-            employee.CalEmpWage();
+            employee.CalEmpWage("TCS",18,21);
+            employee.CalEmpWage("LTI", 17, 22);
+
         }
     }
 }
